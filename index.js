@@ -1,11 +1,11 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
-
+app.use(cors());
 const initalizeDataBase = require("./db/db.connect");
 
 app.use(express.json());
-app.use(cors());
+
 initalizeDataBase();
 
 const Movie = require("./models/movies.models");
